@@ -1,0 +1,64 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#navMenu{
+    display: inline-block;
+    margin: 100px 0 0 100px;
+}
+#navMenu > span{
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: lightseagreen;
+    cursor: pointer;
+}
+#navMenu > span:not(:last-child){
+    margin-bottom: 7px;
+}
+#navMenu, #navMenu > span{
+    transition: all 0.4s ease-in-out;
+}
+/*добавляем анимации*/
+#navMenu.active{
+    transition-delay: 0.8s;
+    transform: rotate(45deg);
+}
+#navMenu.active > span{
+    background-color: darkviolet;
+}
+#navMenu.active > span:nth-child(2){
+    width: 0;
+}
+#navMenu.active > span:nth-child(1),
+#navMenu.active > span:nth-child(3){
+    transition-delay: 0.4s;
+}
+#navMenu.active > span:nth-child(1){
+    transform: translateY(9px);
+}
+#navMenu.active > span:nth-child(3){
+    transform: translateY(-9px) rotate(90deg);
+}
+.menu{
+    /*display: none;*/
+    margin-top: 5px;
+    margin-left: 100px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s opacity, 1s visibility;
+}
+.menu.open{
+    display: block;
+    margin-top: 5px;
+    margin-left: 100px;
+    opacity: 1;
+    visibility: visible;
+}
+.submenu{
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+.submenu:hover{
+    text-decoration: underline;
+    color: darkblue;
+}
